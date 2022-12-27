@@ -28,7 +28,7 @@ Alternatively, if you need the development version, install it with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("line/conflr")
+devtools::install_github("davdittrich/conflr")
 ```
 
 ## Preparation
