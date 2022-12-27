@@ -50,15 +50,25 @@ confl_verb <- function(verb, path, ...) {
   # remove /rest/api
   base_url <- stringi::stri_replace_last_regex(base_url, "/rest/api$", "")
 
-  username <- Sys.getenv("CONFLUENCE_USERNAME") %|""|% ask_confluence_username()
-  password <- Sys.getenv("CONFLUENCE_PASSWORD") %|""|% ask_confluence_password()
+  pat <- Sys.getenv("CONFLUENCE_PAT", unset=NA)
+  if (is.na(pat)){
+    username <- Sys.getenv("CONFLUENCE_USERNAME") %|""|% ask_confluence_username()
+    password <- Sys.getenv("CONFLUENCE_PASSWORD") %|""|% ask_confluence_password()
 
-  res <- httr::VERB(
-    verb = verb,
-    url = glue("{base_url}/rest/api{path}"),
-    httr::authenticate(username, password),
-    ...
-  )
+    res <- httr::VERB(
+      verb = verb,
+      url = glue("{base_url}/rest/api{path}"),
+      httr::authenticate(username, password),
+      ...
+    )
+  } else {
+    res <- httr::VERB(
+      verb = verb,
+      url = glue("{base_url}/rest/api{path}"),
+      httr::add_headers("Authorization"=paste("Bearer", pat)),
+      ...
+    )  
+  }
 
   if (httr::status_code(res) >= 300) {
     abort(paste(
@@ -68,8 +78,10 @@ confl_verb <- function(verb, path, ...) {
   }
 
   Sys.setenv(CONFLUENCE_URL = base_url)
-  Sys.setenv(CONFLUENCE_USERNAME = username)
-  Sys.setenv(CONFLUENCE_PASSWORD = password)
+  if (is.na(pat)){
+    Sys.setenv(CONFLUENCE_USERNAME = username)
+    Sys.setenv(CONFLUENCE_PASSWORD = password)
+  }
 
   res
 }

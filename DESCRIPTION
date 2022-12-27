@@ -1,10 +1,11 @@
 Package: conflr
 Type: Package
 Title: Client for 'Confluence' API
-Version: 0.1.1.9000
+Version: 0.1.1.9001
 Authors@R: c(
     person("Hiroaki", "Yutani", email = "hiroaki.yutani@linecorp.com", role = c("aut", "cre")),
-    person(family = "LINE Corporation", role = c("cph"))
+    person(family = "LINE Corporation", role = c("cph")),
+    person("Denns Alexis Valin", "Dittrich", email = "dd-rstat@dr-dittrich.de", role = c("ctb"))
     )
 Description: Provides utilities for working with various 'Confluence' API 
     <https://docs.atlassian.com/ConfluenceServer/rest/latest/>, including a
