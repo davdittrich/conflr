@@ -113,9 +113,9 @@ confluence_document <- function(title = NULL,
   )
 
   format <- rmarkdown::md_document(
-    variant = "commonmark",
-    pandoc_args = "--wrap=none",
-    md_extensions = "-tex_math_single_backslash-tex_math_dollars-raw_tex",
+    variant = "jira",
+    pandoc_args = "--wrap=none --filter=pandoc-crossref",
+    md_extensions = "+citations-tex_math_single_backslash-tex_math_dollars-raw_tex",
     preserve_yaml = FALSE
   )
 
