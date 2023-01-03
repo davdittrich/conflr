@@ -271,9 +271,14 @@ replace_image <- function(x, image_size_default = 600) {
     } else {
       hw_params <- ""
     }
+    if (length(img_attrs$title) == 0){
+      title = ""
+    } else {
+      title = img_attrs$title
+    }
 
     stringi::stri_sub(x, loc[1], loc[2]) <- glue(
-      '<ac:image {hw_params}><ri:attachment ri:filename="{basename(src)}" /></ac:image><span><em>{img_attrs$title}</em></spam>'
+      '<ac:image {hw_params}><ri:attachment ri:filename="{basename(src)}" /></ac:image><span><em>{title}</em>/<span>'
     )
   }
   x
