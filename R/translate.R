@@ -256,10 +256,10 @@ replace_image <- function(x, image_size_default = 600) {
     )
 
     if (!is.null(img_attrs$title)) {
-      hw <- append(hw, title = img_attrs$src)
+      hw <- append(hw, list(title = img_attrs$src))
     }
     if (!is.null(img_attrs$alt)) {
-      hw <- append(hw, alt = img_attrs$alt)
+      hw <- append(hw, list(alt = img_attrs$alt))
     }
 
     hw <- purrr::compact(hw)
