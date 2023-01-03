@@ -278,7 +278,7 @@ replace_image <- function(x, image_size_default = 600) {
     }
 
     stringi::stri_sub(x, loc[1], loc[2]) <- glue(
-      '<ac:image {hw_params}><ri:attachment ri:filename="{basename(src)}" /></ac:image><span><em>{title}</em></span>'
+      '<ac:image {hw_params}><ri:attachment ri:filename="{basename(src)}" /></ac:image><span class="jira-issue" style="display:inline-block;max-width:600px"><em>{title}</em></span>'
     )
   }
   x
