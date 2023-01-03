@@ -254,6 +254,14 @@ replace_image <- function(x, image_size_default = 600) {
       width = img_attrs$width %||% image_size_default,
       height = img_attrs$height
     )
+
+    if (!is.null(img_attrs$title)) {
+      hw <- append(hw, title = img_attrs$src)
+    }
+    if (!is.null(img_attrs$alt)) {
+      hw <- append(hw, alt = img_attrs$alt)
+    }
+
     hw <- purrr::compact(hw)
 
     # glue_collapse returns character(0) for character(0), so this if branch is needed.
