@@ -81,6 +81,7 @@ translate_to_confl_macro <- function(html_text,
   html_text <- replace_math(html_text)
   html_text <- replace_image(html_text, image_size_default = image_size_default)
   html_text <- replace_tabsets(html_text)
+  html_text <- replace_references(html_text)
   # unescape texts inside CDATA
   html_text <- restore_cdata(html_text)
 
@@ -122,6 +123,13 @@ get_corresponding_lang <- function(x, supported_syntax_highlighting = character(
   } else {
     unname(x)
   }
+}
+
+replace_references <- function(x) {
+ x <- stringi::stri_replace_all_fixed(x,
+  'class="csl-entry"',
+  'style="margin-left:2em;text-indent:-2em;"')
+x
 }
 
 replace_code_chunk <- function(x,
