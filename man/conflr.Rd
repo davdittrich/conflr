@@ -6,10 +6,7 @@
 \alias{conflr-package}
 \title{R Client for 'Confluence' API}
 \description{
-Provides utilities for working with various 'Confluence' API 
-    <https://docs.atlassian.com/ConfluenceServer/rest/latest/>, including a
-    functionality to convert an R Markdown document to 'Confluence' format and
-    upload it to 'Confluence' automatically.
+Provides utilities for working with various 'Confluence' API \url{https://docs.atlassian.com/ConfluenceServer/rest/latest/}, including a functionality to convert an R Markdown document to 'Confluence' format and upload it to 'Confluence' automatically.
 }
 \seealso{
 Useful links:
@@ -26,6 +23,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item  LINE Corporation [copyright holder]
+  \item Denns Alexis Valin Dittrich \email{dd-rstat@dr-dittrich.de} [contributor]
 }
 
 }

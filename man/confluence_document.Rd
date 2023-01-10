@@ -65,7 +65,9 @@ Knit and post a given R Markdown file to 'Confluence'.
 \details{
 All options of \code{confluence_document()} can also be specified via the argument
 of \code{confl_create_post_from_Rmd}. If an option is specified on both, the one given
-as an argument will be used.\preformatted{---
+as an argument will be used.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{---
 title: "title1"
 output:
   confluence_document:
@@ -83,7 +85,7 @@ output:
 ---
 
 ...
-}
+}\if{html}{\out{</div>}}
 }
 \examples{
 example_Rmd <- system.file("extdata/example.Rmd", package = "conflr")

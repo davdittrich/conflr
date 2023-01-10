@@ -37,6 +37,6 @@ Suggests:
     mockery,
     testthat (>= 2.1.0),
     withr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.2
 Roxygen: list(markdown = TRUE)
 Config/runiverse/noindex: true
