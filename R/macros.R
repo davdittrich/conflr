@@ -22,7 +22,7 @@ conf_macro_generator <- function(type = c('inline', 'block'),
 
   open <- switch(type, inline = '`', block = '\n```{=html}\n')
   close <- switch(type, inline = '`{=html}', block = '\n```\n')
-  spacer <- switch(type, inline = '', block = '\n')
+  spacer <- switch(type, inline = '', block = '')
 
   macro <- glue('{open}<ac:structured-macro ac:name="{name}">{spacer}')
 
@@ -136,3 +136,4 @@ confl_macro_note <- function(body) {
 confl_macro_warning <- function(body) {
   conf_macro_generator(type = 'block', name = 'warning', body = body)
 }
+
