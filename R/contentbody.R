@@ -51,6 +51,7 @@ confl_contentbody_convert <- function(x,
 }
 
 
+#' @export
 confl_add_node <- function(title = "", body = "") {
 
  glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
@@ -62,6 +63,7 @@ confl_add_node <- function(title = "", body = "") {
  x
 }
 
+#' @export
 confl_add_tip <- function(title = "", body = "") {
 
  glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
