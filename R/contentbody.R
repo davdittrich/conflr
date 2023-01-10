@@ -65,7 +65,7 @@ confl_contentbody_convert <- function(x,
 confl_add_note <- function(title = "", body = "") {
 
  glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
-   glue:glue('{{note:title={title}|icon=false}}{body}{{note}}') |> 
+   glue::glue('{{note:title={title}|icon=false}}{body}{{note}}') |> 
    confl_contentbody_convert() |>
    stringi::stri_replace_all_regex('<.?p>',''),
    '</div>') -> x
@@ -88,7 +88,7 @@ confl_add_note <- function(title = "", body = "") {
 confl_add_tip <- function(title = "", body = "") {
 
  glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
-   glue:glue('{{tip:title={title}|icon=false}}{body}{{tip}}') |> 
+   glue::glue('{{tip:title={title}|icon=false}}{body}{{tip}}') |> 
    confl_contentbody_convert() |>
    stringi::stri_replace_all_regex('<.?p>',''),
    '</div>') -> x
