@@ -136,7 +136,7 @@ x
 replace_makro <- function(x) {
  x <- stringi::stri_replace_all_fixed(x,
   'class="cflr-rfloat"',
-  'style="clear:both;margin-left:2em;max-width=32em;float:right;"')
+  'class="clear aui-align-right" style="margin-left:2em;max-width=32em;"')
 x
 }
 
