@@ -8,6 +8,16 @@
 # WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
 # A PARTICULAR PURPOSE. See <http://www.gnu.org/licenses/> for more details.
 
+#' Creates note
+#'
+#' @name confl_add_node
+#' @param title
+#'   The content title to convert.
+#' @param body
+#'   The content body to convert.
+#'
+#' @return
+#'   The API response as a list.
 #' @export
 confl_add_note <- function(title = "", body = "") {
 
@@ -20,6 +30,17 @@ confl_add_note <- function(title = "", body = "") {
  x
 }
 
+#' Creates tip
+#'
+#' @name confl_add_tip
+#' @param title
+#'   The content title to convert.
+#' @param body
+#'   The content body to convert.
+#'
+#' @return
+#'   The API response as a list.
+#' @export
 #' @export
 confl_add_tip <- function(title = "", body = "") {
 
