@@ -66,7 +66,7 @@ confl_add_note <- function(title = "", body = "") {
   title <- title
   body <- body
 
-   glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right;margin-left:2em;">',
+   glue::glue('<div class="cflr-rfloat">',
      confl_contentbody_convert("{note:title=TITLE|icon=false}BODY{note}") |>
      stringi::stri_replace_all_regex('TITLE', title) |>
      stringi::stri_replace_all_regex('BODY', body) |>
@@ -93,7 +93,7 @@ confl_add_tip <- function(title = "", body = "") {
   title <- title
   body <- body
 
-   glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right;margin-left:2em;">',
+   glue::glue('<div class="cflr-rfloat">',
      confl_contentbody_convert("{tip:title=TITLE|icon=false}BODY{tip}") |>
      stringi::stri_replace_all_regex('TITLE', title) |>
      stringi::stri_replace_all_regex('BODY', body) |>
