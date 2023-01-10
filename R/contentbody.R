@@ -50,27 +50,3 @@ confl_contentbody_convert <- function(x,
   httr::content(res)$value
 }
 
-
-#' @export
-confl_add_node <- function(title = "", body = "") {
-
- glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
-   glue:glue('{{note:title={title}|icon=false}}{body}{{note}}') |> 
-   confl_contentbody_convert() |>
-   stringi::stri_replace_all_regex('<.?p>',''),
-   '</div>') -> x
-  
- x
-}
-
-#' @export
-confl_add_tip <- function(title = "", body = "") {
-
- glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
-   glue:glue('{{tip:title={title}|icon=false}}{body}{{tip}}') |> 
-   confl_contentbody_convert() |>
-   stringi::stri_replace_all_regex('<.?p>',''),
-   '</div>') -> x
-  
- x
-}
