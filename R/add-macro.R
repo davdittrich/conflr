@@ -9,7 +9,7 @@
 # A PARTICULAR PURPOSE. See <http://www.gnu.org/licenses/> for more details.
 
 #' @export
-confl_add_node <- function(title = "", body = "") {
+confl_add_note <- function(title = "", body = "") {
 
  glue::glue('<div class="conflr-note" style="clear:both;width=32em;float:right; margin-left:2em">',
    glue:glue('{{note:title={title}|icon=false}}{body}{{note}}') |> 
